@@ -11,10 +11,10 @@ const accounts = process.env.DEV_KEY !== undefined ? [process.env.DEV_KEY] : []
 export default {
   networks: {
     hardhat: {
-      forking: {
-        url: process.env.BASE_RPC || '',
-        blockNumber: 2973850, // 8/22/2023 ~4:45PM
-      },
+      // forking: {
+      //   url: process.env.BASE_RPC || '',
+      //   blockNumber: 2973850, // 8/22/2023 ~4:45PM
+      // },
     },
     base: {
       url: process.env.BASE_RPC || '',
@@ -29,6 +29,16 @@ export default {
       chainId: 84531,
       // gas: 500000,
       // gasPrice: 100,
+    },
+    mode: {
+      url: process.env.MODE_RPC,
+      accounts,
+      chainId: 34443,
+    },
+    modeTestnet: {
+      url: process.env.MODE_TESTNET_RPC,
+      accounts,
+      chainId: 919,
     },
   },
   etherscan: {
