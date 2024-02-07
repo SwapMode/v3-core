@@ -42,9 +42,19 @@ export default {
     },
   },
   etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: {
+      mode: 'mode', // apiKey is not required, just set a placeholder
+    },
+    customChains: [
+      {
+        network: 'mode',
+        chainId: 34443,
+        urls: {
+          apiURL: 'https://api.routescan.io/v2/network/mainnet/evm/34443/etherscan',
+          browserURL: 'https://modescan.io',
+        },
+      },
+    ],
   },
   solidity: {
     version: '0.7.6',
