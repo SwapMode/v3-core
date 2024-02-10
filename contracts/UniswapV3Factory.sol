@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: BUSL-1.1
 pragma solidity =0.7.6;
 
+import './interfaces/IProtocolToken.sol';
 import './interfaces/IUniswapV3Factory.sol';
 
 import './UniswapV3PoolDeployer.sol';
@@ -19,7 +20,7 @@ contract UniswapV3Factory is IUniswapV3Factory, UniswapV3PoolDeployer, NoDelegat
     /// @inheritdoc IUniswapV3Factory
     mapping(address => mapping(address => mapping(uint24 => address))) public override getPool;
 
-    constructor() {
+    constructor(IProtocolToken _protocolToken) UniswapV3PoolDeployer(_protocolToken) {
         owner = msg.sender;
         emit OwnerChanged(address(0), msg.sender);
 

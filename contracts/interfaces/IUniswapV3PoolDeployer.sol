@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.5.0;
 
+import './IProtocolToken.sol';
+
 /// @title An interface for a contract that is capable of deploying Uniswap V3 Pools
 /// @notice A contract that constructs a pool must implement this to pass arguments to the pool
 /// @dev This is used to avoid having constructor arguments in the pool contract, which results in the init code hash
@@ -20,6 +22,7 @@ interface IUniswapV3PoolDeployer {
             address factory,
             address token0,
             address token1,
+            IProtocolToken _protocolToken,
             uint24 fee,
             int24 tickSpacing
         );
