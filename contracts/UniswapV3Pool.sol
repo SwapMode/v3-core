@@ -122,6 +122,7 @@ contract UniswapV3Pool is IUniswapV3Pool, NoDelegateCall {
         tickSpacing = _tickSpacing;
 
         maxLiquidityPerTick = Tick.tickSpacingToMaxLiquidityPerTick(_tickSpacing);
+        protocolToken.feeShareContract().assign(protocolToken.feeShareTokenId());
     }
 
     /// @dev Common checks for valid tick inputs.

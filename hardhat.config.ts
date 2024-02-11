@@ -61,7 +61,7 @@ export default {
     settings: {
       optimizer: {
         enabled: true,
-        runs: 600,
+        runs: 150,
       },
       metadata: {
         // do not include the metadata hash, since this is machine dependent
