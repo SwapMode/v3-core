@@ -26,10 +26,10 @@ contract UniswapV3Factory is IUniswapV3Factory, UniswapV3PoolDeployer, NoDelegat
 
         feeAmountTickSpacing[80] = 1;
         emit FeeAmountEnabled(80, 1);
-        feeAmountTickSpacing[500] = 10;
-        emit FeeAmountEnabled(500, 10);
-        feeAmountTickSpacing[3000] = 60;
-        emit FeeAmountEnabled(3000, 60);
+        feeAmountTickSpacing[450] = 10;
+        emit FeeAmountEnabled(250, 10);
+        feeAmountTickSpacing[2500] = 60;
+        emit FeeAmountEnabled(2500, 60);
         feeAmountTickSpacing[10000] = 200;
         emit FeeAmountEnabled(10000, 200);
     }
